@@ -1,5 +1,5 @@
 {
-  "name": "ozanpay-php-sdk",
+  "name": "ozanlimited/ozanpay-php-sdk",
   "description": "Ozan Pay SDK For PHP",
   "keywords": [
     "ozan",

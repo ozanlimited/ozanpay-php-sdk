@@ -19,7 +19,7 @@ Minimum TLS v1.2 will be supported after July 2018. Please upgrade your openssl 
 You can install the bindings via [Composer](http://getcomposer.org/). Run the following command:
 
 ```bash
-composer require ozan/ozanpay-php-sdk
+composer require ozanlimited/ozanpay-php-sdk
 ```
 
 To use the bindings, use Composer's [autoload](https://getcomposer.org/doc/00-intro.md#autoloading):
