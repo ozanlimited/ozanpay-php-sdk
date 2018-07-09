@@ -98,9 +98,9 @@ class PaymentRequest extends OzanRequest
     {
     }
 
-    public function getJsonObject()
+    public function fromJson()
     {
-        return JsonBuilder::fromJsonObject(parent::getJsonObject())
+        return JsonBuilder::fromJsonObject(parent::fromJson())
             ->add("checkoutToken", $this->getCheckoutToken())
             ->add("reference", $this->getReference())
             ->addArray("amount", ["value" => $this->getAmount(), "currency" => $this->getCurrency()])

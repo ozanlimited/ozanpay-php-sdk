@@ -11,6 +11,11 @@ class JsonBuilder
         $this->json = $json;
     }
 
+    /**
+     * A factory for creating empty JsonBuilder.
+     *
+     * @return JsonBuilder
+     */
     public static function create()
     {
         return new JsonBuilder(array());
@@ -22,15 +27,16 @@ class JsonBuilder
     }
 
     /**
-     * @param $key
-     * @param $value
+     * Adds value with key
+     * @param string $key The key with which the specified value is to be associated
+     * @param $value The value to be associated with the specified key
      * @return JsonBuilder
      */
     public function add($key, $value = null)
     {
         if (isset($value)) {
-            if ($value instanceof JsonConvertible) {
-                $this->json[$key] = $value->getJsonObject();
+            if ($value instanceof Jsonable) {
+                $this->json[$key] = $value->fromJson();
             } else {
                 $this->json[$key] = $value;
             }
@@ -39,16 +45,17 @@ class JsonBuilder
     }
 
     /**
-     * @param $key
-     * @param array $array
+     * Adds array value with key
+     * @param string $key The key with which the specified value is to be associated
+     * @param array $array The array value to be associated with the specified key
      * @return JsonBuilder
      */
     public function addArray($key, array $array = null)
     {
         if (isset($array)) {
             foreach ($array as $index => $value) {
-                if ($value instanceof JsonConvertible) {
-                    $this->json[$key][$index] = $value->getJsonObject();
+                if ($value instanceof Jsonable) {
+                    $this->json[$key][$index] = $value->fromJson();
                 } else {
                     $this->json[$key][$index] = $value;
                 }
@@ -62,11 +69,21 @@ class JsonBuilder
         return $this->json;
     }
 
+    /**
+     * Returns the JSON representation of a value
+     * @param $jsonObject
+     * @return string
+     */
     public static function jsonEncode($jsonObject)
     {
         return json_encode($jsonObject);
     }
 
+    /**
+     * Decodes a JSON string
+     * @param $rawResult
+     * @return mixed
+     */
     public static function jsonDecode($rawResult)
     {
         return json_decode($rawResult);

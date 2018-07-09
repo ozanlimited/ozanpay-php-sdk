@@ -105,7 +105,7 @@ class Ozan
                     'User-Agent' => OzanUserAgent::getValue(static::SDK_NAME, static::SDK_VERSION),
                     'Content-Type' => 'application/json'
                 ],
-                'json' => $paymentRequest->getJsonObject()
+                'json' => $paymentRequest->fromJson()
             ]);
             $paymentResponse = new OzanResponse($response->getBody(), $response->getStatusCode(), $response->getHeaders());
             return $paymentResponse;

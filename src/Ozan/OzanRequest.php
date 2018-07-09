@@ -4,9 +4,8 @@ namespace Ozan;
 
 class OzanRequest extends BaseModel
 {
-    public function getJsonObject()
+    public function fromJson()
     {
         return JsonBuilder::create()->getObject();
     }
-
 }

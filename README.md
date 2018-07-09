@@ -6,17 +6,17 @@ __Welcome to Ozan Pay PHP SDK__. This repository contains Ozan Pay's PHP SDK.
 
 # Requirements
 
-PHP 5.3 and later.
+PHP 5.3 and above.
 
-### Note
+# Contact Us
 
-Minimum TLS v1.2 will be supported after July 2018. Please upgrade your openssl version to minimum 1.0.1. If you have any questions, please open an issue on Github or contact us at integration@ozan.com.
+If you have any questions, please create an issue on Github or contact us at itsupport@ozan.com.
 
 # Installation
 
 ### Composer
 
-You can install the bindings via [Composer](http://getcomposer.org/). Run the following command:
+You can install the sdk via [Composer](http://getcomposer.org/). Run the following command:
 
 ```bash
 composer require ozanlimited/ozanpay-php-sdk

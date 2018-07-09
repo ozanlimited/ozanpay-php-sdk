@@ -2,10 +2,10 @@
 
 namespace Ozan;
 
-abstract class BaseModel implements JsonConvertible
+abstract class BaseModel implements Jsonable
 {
-    public function toJsonString()
+    public function toJson()
     {
-        return JsonBuilder::jsonEncode($this->getJsonObject());
+        return JsonBuilder::jsonEncode($this->fromJson());
     }
 }
